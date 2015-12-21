@@ -15,6 +15,7 @@
          url(font/Apercu/apercu_regular-webfont.ttf) format("truetype");
 }
 
+a,
 body {
 	font-family: "Apercu", Arial, sans-serif;
 	color: #827e86;
@@ -22,10 +23,26 @@ body {
 
 a{
 	text-decoration: none;
-	color: #fff;
+	color: inherit;
 }
 
-/* Header block style*/
+.popup {
+	width: 100%;
+	min-height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	overflow: hidden;
+	position: fixed;
+	top: 0px;
+}
+
+#registration{
+	position: fixed;
+	top: 00px;
+	background: #fff;
+	border-radius: 5px;
+}
+
+/******* Header block style *******/
 
 .header-block {
 	height: 100vh;
@@ -85,11 +102,12 @@ header nav {
 .header-controls{
 	position: absolute;
 	width: 500px;
+	height: 200px;
 	left:0;
 	top: 0;
 	right: 0;
 	bottom: 0;
-	margin: 230px auto;
+	margin: auto;
 }
 
 .header-controls>h1{
@@ -137,7 +155,7 @@ header nav {
 	right: 0;
 }
 
-/* Main block style*/
+/******* Main block style *******/
 
 #our_features h2{
 	text-align: center;
@@ -200,7 +218,7 @@ header nav {
 	color: #fff;
 }
 
-/* Footer block style*/
+/******* Footer block style *******/
 
 .users_reviews{
 	text-align: center;	
@@ -308,8 +326,13 @@ footer li{
 	margin: 10px 10px;
 }
 
+.clearfix,
 footer::after {
 	content: "";
 	display: block;
 	clear: both;
+}
+
+.description{
+
 }

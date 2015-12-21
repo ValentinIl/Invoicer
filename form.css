@@ -8,14 +8,6 @@
 	margin: 0;
 }
 
-#registration{
-	display: none;
-	position: fixed;
-	top: 00px;
-	background: #fff;
-	border-radius: 5px;
-}
-
 form a{
 	color: #9682c2;
 }
@@ -32,6 +24,7 @@ form{
 	bottom: 0:;
 	margin: auto;
 	padding: 10px;
+
 }
 
 h3{
