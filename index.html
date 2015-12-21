@@ -2,9 +2,27 @@
 <html>
 <head>
 	<title>Invoicer</title>
-	<link rel="stylesheet" href="style2.css">
+	<link rel="stylesheet" href="form.css">
 	<link rel="stylesheet" href="style.css">
 	<meta charset="utf-8">
+	<script type="text/javascript">
+	function showPopup(){
+		$("#popup").show();
+		return false;
+	}
+	function hidePopup(){
+		$("#popup").hide();
+		return false;
+	}
+	function showPopup(){
+		document.getElementById("popup").style.display = "block";
+		return false;
+}
+	function hidePopup(){
+		document.getElementById("popup").style.display = "none";
+		return false;
+}
+	</script>
 </head>
 <body>
 	<div class="header-block">
@@ -19,7 +37,7 @@
 				<a href="#">About us</a>
 				<a href="#">Faq</a>
 				<a href="#">Tutorials</a>
-				<a href="#" class="transparent-button" onclick="document.getElementById('registration').style.display = 'block';">Sign up</a>
+				<a href="#" class="transparent-button" onclick="showPopup()">Sign up</a>
 			</nav>
 		</header>
 
@@ -39,7 +57,7 @@
 
 	<div id="our_features">
 		<h2>Our features</h2>
-		<div class="text right">
+		<div class="text right clearfix">
 			<div class="description">
 				<img src="img/book.png">
 				<h3>Easy invoices that save time</h3>
@@ -117,58 +135,61 @@
 		</footer>
 	</div>
 
-	<form id="registration" method="post">
-		<h3>Sign up</h3><hr color="#B1BBD8">
-		<div class="name">
-			<div>Username<input type="text" name="Username"></div>
-			<div>Email<input type="email" name="E-mail"></div>
-			<div class="double pas">
-				<div>Password
-					<input type="password" name="Password" required>
-				</div>
-				<div>Confirm password
-					<input type="password" name="C_password" required>
-				</div>
-			</div>
-		</div><hr color="#eeeeee">
-
-		<div class="data">
-			<div class="double name">
-				<div>First name<input type="text" name="F_name"></div>
-				<div>Last name<input type="text" name="L_name"></div>
-			</div>
-			
-			<div>Sex<br>
-				<div class="double sex">
-					<div>
-						<input type="radio" name="gender" checked>
-						<label for="man">Male</label>
+	<div class="popup" id="popup">
+		<form id="registration" method="post">
+			<a style="float:right; font-size:20px; text-decoration:none;" onclick="hidePopup()" href="#">x</a>
+			<h3>Sign up</h3><hr color="#B1BBD8">
+			<div class="name">
+				<div>Username<input type="text" name="Username" max-length="50" required></div>
+				<div>Email<input type="email" name="E-mail" max-length="50"></div>
+				<div class="double pas">
+					<div>Password
+						<input type="password" name="Password" max-length="50" required>
 					</div>
-					<div>
-						<input type="radio" name="gender">
-						<label for="woman">Female</label>
+					<div>Confirm password
+						<input type="password" name="C_password" max-length="50" required>
 					</div>
 				</div>
-			</div>
-			
-			<div>City
-				<select name="city">
-		  			<option value="odessa">Одесса</option>
-		  			<option value="kiev">Киев</option>
-		 			<option value="lviv">Львов</option>
-		  			<option value="sumy">Сумы</option>
-		 			<option value="rivne">Ровно</option>
-				</select><br>
-			</div>
+			</div><hr color="#eeeeee">
 
-			<textarea name="comment" placeholder="Few words about me" rows="25"></textarea>
-		</div><hr color="#eeeeee">
-		
-		<input type="checkbox" name="agree" value="agree" required>I agree with <a href="/">Terms and conditions</a>
-		<div class="bottom">			
-			<input type="submit" value="Register">
-			<input type="reset" value="Clear">
-		</div>
-	</form>
+			<div class="data">
+				<div class="double name">
+					<div>First name<input type="text" name="F_name" max-length="50" required></div>
+					<div>Last name<input type="text" name="L_name" max-length="50" required></div>
+				</div>
+				
+				<div>Sex<br>
+					<div class="double sex">
+						<div>
+							<input type="radio" name="gender" checked>
+							<label for="man">Male</label>
+						</div>
+						<div>
+							<input type="radio" name="gender">
+							<label for="woman">Female</label>
+						</div>
+					</div>
+				</div>
+				
+				<div>City
+					<select name="city">
+			  			<option value="odessa">Одесса</option>
+			  			<option value="kiev">Киев</option>
+			 			<option value="lviv">Львов</option>
+			  			<option value="sumy">Сумы</option>
+			 			<option value="rivne">Ровно</option>
+					</select><br>
+				</div>
+
+				<textarea name="comment" placeholder="Few words about me" rows="25"></textarea>
+			</div><hr color="#eeeeee">
+			
+			<input type="checkbox" name="agree" value="agree" required>I agree with <a href="/">Terms and conditions</a>
+			<div class="bottom">			
+				<input type="submit" value="Register">
+				<input type="reset" value="Clear">
+			</div>
+		</form>
+	</div>
 </body>
 </html>
